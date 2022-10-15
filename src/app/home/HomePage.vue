@@ -8,7 +8,7 @@
           <div class="product">
 
 
-			<router-link to="/product">
+			<router-link :to="{name: 'product'}">
 	            <product-card />
 	        </router-link>
 
