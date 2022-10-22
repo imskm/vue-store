@@ -50,7 +50,7 @@ export default {
     display: flex;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 100px;
+    padding: 32px 100px;
   }
   .hero-section-wrapper {
     display: flex;
@@ -71,7 +71,7 @@ export default {
     color: darkgoldenrod;
   }
   .hero-image {
-    height: 400px;
+    height: 250px;
   }
 
   .section {
@@ -134,20 +134,26 @@ export default {
     display: flex;
     flex-direction: row;
     margin-bottom: 16px;
+    flex-wrap: wrap;
   }
+  .product-wrapper {
+    flex-basis: 25%;
+    padding: 10px;
+  }
+
   .card {
-    padding: 12px;
+    width: 100%;
   }
 
   .card .card-image {
-    width: 304px;
+    width: 100%;
     height: 396px;
     overflow: hidden;
     
   }
 
   .card-image img {
-    width: 304px;
+    width: 100%;
     height: 396px;
     object-fit: cover;
   }
