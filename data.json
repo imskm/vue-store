@@ -1,76 +1,84 @@
 {
 	"products": [
 		{
+			"id": 1,
 			"brand": "Aelomart",
 			"title": "Color Black Men Round Neck White,Maroon T-Shirt",
 			"category": "T-Shirt",
 			"price_mp": "299",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/flipkart2.png",
+			"image": "/assets/img/a.jpeg"
 		},
 		{
+			"id": 2,
 			"brand": "Aelomart",
 			"title": "The fashion plus soild men hooded neck",
 			"category": "T-Shirt",
 			"price_mp": "500",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/b.jpeg",
+			"image": "/assets/img/b.jpeg"
 		},
 		{
+			"id": 3,
 			"brand": "Aelomart",
 			"title": "The fashion plus soild men hooded neck",
 			"category": "T-Shirt",
 			"price_mp": "500",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/c.jpeg",
+			"image": "/assets/img/c.jpeg"
 		},
 		{
+			"id": 4,
 			"brand": "Aelomart",
 			"title": "The fashion plus soild men hooded neck",
 			"category": "T-Shirt",
 			"price_mp": "500",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/d.jpeg",
+			"image": "/assets/img/d.jpeg"
 		},
 		{
+			"id": 5,
 			"brand": "Aelomart",
 			"title": "The fashion plus soild men hooded neck",
 			"category": "T-Shirt",
 			"price_mp": "500",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/e.jpeg",
+			"image": "/assets/img/e.jpeg"
 		},
 		{
+			"id": 6,
 			"brand": "Aelomart",
 			"title": "The fashion plus soild men hooded neck",
 			"category": "T-Shirt",
 			"price_mp": "500",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/f.jpeg",
+			"image": "/assets/img/f.jpeg"
 		},
 		{
+			"id": 7,
 			"brand": "Aelomart",
 			"title": "The fashion plus soild men hooded neck",
 			"category": "T-Shirt",
 			"price_mp": "500",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/g.jpeg",
+			"image": "/assets/img/g.jpeg"
 		},
 		{
+			"id": 8,
 			"brand": "Aelomart",
 			"title": "The fashion plus soild men hooded neck",
 			"category": "T-Shirt",
 			"price_mp": "500",
 			"price_sp": "1499",
 			"sizes": ["S", "M", "L", "XL", "XXL"],
-			"image": "/assets/img/h.jpeg",
+			"image": "/assets/img/h.jpeg"
 		}
-	],
+	]
 }
