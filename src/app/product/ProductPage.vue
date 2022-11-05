@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div class="card-button">
-			<button class="card-add">Add to Cart</button>
+			<button @click="addItemInCart" class="card-add">Add to Cart</button>
 			<button class="card-buy">Buy Know</button>
 		</div>
 	</div>
@@ -47,6 +47,7 @@
 import APIDATA from '../../../data.json';
 
 export default {
+	emits: ['cart-updated'],
 	data() {
 		return {
 			productId: null,
@@ -64,6 +65,15 @@ export default {
 			if (this.qty > 1) {
 				this.qty--;
 			}
+		},
+
+		addItemInCart() {
+			const cartItem = {
+				product: this.product,
+				qty: this.qty,
+			}
+
+			this.$emit('cart-updated', cartItem);
 		},
 	},
 

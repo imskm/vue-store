@@ -1,8 +1,8 @@
 <template>
   <hero-section />
-   <navbar />
+  <navbar :cart="updatedCart" />
 
-   <router-view></router-view>
+  <router-view @cart-updated="parentCartUpdated"></router-view>
   
 </template>
 
@@ -16,8 +16,32 @@ export default {
   },
   data() {
     return {
+      updatedCart: [],
     }
   },
+
+  methods: {
+    parentCartUpdated(data) {
+      let found = false;
+
+      console.log(data);
+
+      this.updatedCart.forEach((item, index) => {
+        if (item.product.id === data.product.id) {
+          console.log("OK");
+          found = true;
+          item.qty = data.qty;
+        }
+      })
+
+      console.log(found);
+
+      if (!found) {
+        console.log("OK2");
+        this.updatedCart.push(data);
+      }
+    },
+  }
 
 }
 </script>
