@@ -3,7 +3,9 @@
     <div class="navbar-wrapper">
       <div class="nav-menu">
         <div class="nav-item">
-          <a href="#">Cart ({{ cart.length }}) <span class="cart-icon"><i class="ri-shopping-cart-line"></i></span></a>
+          <router-link :to="{name: 'checkout'}">
+            Cart ({{ cart.length }}) <span class="cart-icon"><i class="ri-shopping-cart-line"></i></span>
+          </router-link>
         </div>
         <div class="nav-item">
           <a href="#">Filter<span class="filter-icon"><i class="ri-filter-line"></i></span></a>
