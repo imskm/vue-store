@@ -12,7 +12,7 @@
 		<div class="card-title">
 			{{ product.brand }} <br>
 			{{ product.title }}
-			<img src="flipkart2.png" alt="">
+			<img src="/assets/img/flipkart2.png" alt="">
 		</div>
 		<div class=" card-price">
 			&#x20B9;{{ product.price_sp }}
