@@ -1,6 +1,6 @@
 <template>
   <hero-section />
-  <navbar :cart="updatedCart" />
+  <navbar :item-in-cart="itemInCart" />
 
   <router-view @cart-updated="parentCartUpdated"></router-view>
   
@@ -9,6 +9,7 @@
 <script>
 import HeroSection from './components/HeroSection.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
+import { CartService } from './services/CartService.js';
 export default {
   components: {
     'hero-section': HeroSection,
@@ -16,30 +17,13 @@ export default {
   },
   data() {
     return {
-      updatedCart: [],
+      itemInCart: 0,
     }
   },
 
   methods: {
-    parentCartUpdated(data) {
-      let found = false;
-
-      console.log(data);
-
-      this.updatedCart.forEach((item, index) => {
-        if (item.product.id === data.product.id) {
-          console.log("OK");
-          found = true;
-          item.qty = data.qty;
-        }
-      })
-
-      console.log(found);
-
-      if (!found) {
-        console.log("OK2");
-        this.updatedCart.push(data);
-      }
+    parentCartUpdated() {
+      this.itemInCart = CartService.itemCount();
     },
   }
 

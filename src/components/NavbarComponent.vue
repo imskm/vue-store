@@ -4,7 +4,7 @@
       <div class="nav-menu">
         <div class="nav-item">
           <router-link :to="{name: 'checkout'}">
-            Cart ({{ cart.length }}) <span class="cart-icon"><i class="ri-shopping-cart-line"></i></span>
+            Cart ({{ itemInCart }}) <span class="cart-icon"><i class="ri-shopping-cart-line"></i></span>
           </router-link>
         </div>
         <div class="nav-item">
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  props: ["cart"],
+  props: ["itemInCart"],
   data() {
     return {
     }

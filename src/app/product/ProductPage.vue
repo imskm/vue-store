@@ -46,6 +46,8 @@
 <script>
 import APIDATA from '../../../data.json';
 
+import { CartService } from '../../services/CartService.js';
+
 export default {
 	emits: ['cart-updated'],
 	data() {
@@ -73,12 +75,21 @@ export default {
 				qty: this.qty,
 			}
 
-			this.$emit('cart-updated', cartItem);
+			CartService.addItem(cartItem);
+
+			this.$emit('cart-updated');
 		},
 	},
 
 	mounted() {
 		this.productId = this.$route.params.id;
+		
+		let productInCart = CartService.getQtyOfItemById(this.productId);
+		console.log(productInCart);
+		if (productInCart) {
+			this.qty = productInCart.qty;
+		}
+
 		
 		APIDATA.products.forEach((product) => {
 			if (product.id == this.productId) {

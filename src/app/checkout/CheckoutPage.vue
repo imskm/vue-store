@@ -2,7 +2,7 @@
 	<div class="section card-section">
 		
 
-		<div v-for="item in cart" class="card">
+		<div v-for="item in cartItems" class="card">
 			<div class="card-right">
 				<div class="card-img">
 					<img :src="item.product.image" alt="">
@@ -18,7 +18,7 @@
 						<div class="card-actions-button">
 							<button class="qt-button" disabled=""> – </button>
 							<div class="qt-box">
-								<input type="text" class="qt-no" disabled="" value="1">
+								<input type="text" class="qt-no" disabled="" :value="item.qty">
 							</div>
 							<button class="qt-button" disabled=""> + </button>
 						</div>
@@ -59,20 +59,31 @@
 </template>
 
 <script>
+import { CartService } from '../../services/CartService.js';
+
 export default {
-	props: ['cart'],
-	emits: ['remove-item-from-cart'],
+	emits: ['cart-updated'],
 	data() {
 		return {
-
+			cartItems: [],
 		}
 	},
 
 	methods: {
+		loadCartItems() {
+			this.cartItems = CartService.getItems();
+		},
+
 		removeFromCart(cartItem) {
-			this.$emit('remove-item-from-cart', cartItem);
+			CartService.removeItem(cartItem);
+			this.loadCartItems();
+			this.$emit('cart-updated');
 		}
 	},
+
+	mounted() {
+		this.loadCartItems();
+	}
 }
 	
 </script>
