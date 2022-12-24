@@ -59,10 +59,10 @@
 </template>
 
 <script>
-import { CartService } from '../../services/CartService.js';
+import { mapState } from 'pinia';
+import { useCartStore } from '../../stores/cart';
 
 export default {
-	emits: ['cart-updated'],
 	data() {
 		return {
 			cartItems: [],
@@ -71,14 +71,16 @@ export default {
 
 	methods: {
 		loadCartItems() {
-			this.cartItems = CartService.getItems();
+			this.cartItems = this.getItems;
 		},
 
 		removeFromCart(cartItem) {
-			CartService.removeItem(cartItem);
+			this.removeItem(cartItem);
 			this.loadCartItems();
-			this.$emit('cart-updated');
 		}
+	},
+	computed: {
+		...mapState(useCartStore, ['removeItem', 'getItems']),
 	},
 
 	mounted() {

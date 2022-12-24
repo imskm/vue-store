@@ -46,10 +46,11 @@
 <script>
 import APIDATA from '../../../data.json';
 
-import { CartService } from '../../services/CartService.js';
+import { mapState } from 'pinia';
+
+import { useCartStore } from '../../stores/cart';
 
 export default {
-	emits: ['cart-updated'],
 	data() {
 		return {
 			productId: null,
@@ -75,22 +76,25 @@ export default {
 				qty: this.qty,
 			}
 
-			CartService.addItem(cartItem);
-
-			this.$emit('cart-updated');
+			// calling useCartStore action
+			this.addItem(cartItem);
 		},
+	},
+
+	computed: {
+		...mapState(useCartStore, ['addItem', 'getQtyOfItemById']),
 	},
 
 	mounted() {
 		this.productId = this.$route.params.id;
-		
-		let productInCart = CartService.getQtyOfItemById(this.productId);
+
+		// calling useCartStore getters with argument
+		let productInCart = this.getQtyOfItemById(this.productId);
 		console.log(productInCart);
 		if (productInCart) {
 			this.qty = productInCart.qty;
 		}
 
-		
 		APIDATA.products.forEach((product) => {
 			if (product.id == this.productId) {
 				this.product = product;

@@ -4,7 +4,7 @@
       <div class="nav-menu">
         <div class="nav-item">
           <router-link :to="{name: 'checkout'}">
-            Cart ({{ itemInCart }}) <span class="cart-icon"><i class="ri-shopping-cart-line"></i></span>
+            Cart ({{ itemCount }}) <span class="cart-icon"><i class="ri-shopping-cart-line"></i></span>
           </router-link>
         </div>
         <div class="nav-item">
@@ -16,8 +16,10 @@
 </template>
 
 <script>
+import { mapState } from 'pinia';
+import { useCartStore } from '../stores/cart';
+
 export default {
-  props: ["itemInCart"],
   data() {
     return {
     }
@@ -26,5 +28,9 @@ export default {
   methods: {
 
   },
+
+  computed: {
+    ...mapState(useCartStore, ['itemCount']),
+  }
 }
 </script>

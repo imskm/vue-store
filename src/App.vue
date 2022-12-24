@@ -1,32 +1,19 @@
 <template>
-  <hero-section />
-  <navbar :item-in-cart="itemInCart" />
+  <HeroSection />
+  <navbar />
 
-  <router-view @cart-updated="parentCartUpdated"></router-view>
+  <router-view></router-view>
   
 </template>
 
 <script>
 import HeroSection from './components/HeroSection.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
-import { CartService } from './services/CartService.js';
 export default {
   components: {
-    'hero-section': HeroSection,
+    'HeroSection': HeroSection,
     'navbar': NavbarComponent,
   },
-  data() {
-    return {
-      itemInCart: 0,
-    }
-  },
-
-  methods: {
-    parentCartUpdated() {
-      this.itemInCart = CartService.itemCount();
-    },
-  }
-
 }
 </script>
 
